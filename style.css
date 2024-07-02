@@ -8,16 +8,28 @@
     --font: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
 #myVideo {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    z-index: -1;
+    max-height: calc(100% - 63px); /* Adjust 63px to match the height of your footer */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
 }
 
 .content label {
@@ -54,6 +66,8 @@ input {
     justify-content: center;
     padding-top: 50px;
     gap: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 .img-box {
@@ -67,6 +81,7 @@ input {
     width: 500px;
     height: 270px;
     position: relative;
+    z-index: 1;
 }
 
 .img-box-img {
@@ -109,6 +124,7 @@ input {
     font-family: var(--font);
     background: white;
     align-items: center;
+    z-index: 1;
 }
 
 .headline {
@@ -144,6 +160,7 @@ input {
     color: white;
     font-family: var(--font);
     font-size: 20px;
+    z-index: 1;
 }
 
 /* Media Queries for Responsive Design */
@@ -196,10 +213,10 @@ input {
         padding: 20px;
     }
     .img-box p {
-        font-size: 30px;
+        font-size: 20px;
     }
     .img-box h2 {
-        font-size: 50px;
+        font-size: 30px;
     }
     .man-img {
         display: none;
